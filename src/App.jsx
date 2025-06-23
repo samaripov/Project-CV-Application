@@ -1,32 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-
-function Input({ label, applicantInfo, setApplicantInfo }) {
-  const handleOnChange = (e) => {
-    setApplicantInfo({
-      ...applicantInfo,
-      [e.target.name]: e.target.value,
-    });
-  };
-  if (applicantInfo[label.toLowerCase()] === undefined) {
-    applicantInfo[label.toLowerCase()] = "";
-  }
-
-  const specialTypes = ["email", "number"];
-  return (
-    <input
-      placeholder={label}
-      name={label.toLowerCase()}
-      value={applicantInfo[label.toLowerCase()]}
-      type={
-        specialTypes.includes(label.toLowerCase())
-          ? label.toLowerCase()
-          : "text"
-      }
-      onChange={(e) => handleOnChange(e)}
-    ></input>
-  );
-}
+import Input from "./components/input/Input.jsx"
 
 function App() {
   const [applicantInfo, setApplicantInfo] = useState({});
@@ -51,6 +25,8 @@ function App() {
         />
         <Input
           label="email"
+          placeholder="email@example.com"
+          type="email"
           applicantInfo={applicantInfo}
           setApplicantInfo={setApplicantInfo}
         />
