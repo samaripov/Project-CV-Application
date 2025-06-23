@@ -8,10 +8,11 @@ export default function Input({
   setApplicantInfo,
 }) {
   const handleOnChange = (e) => {
-    setApplicantInfo({
+    const newInfo = {
       ...applicantInfo,
       [e.target.name]: e.target.value,
-    });
+    }
+    setApplicantInfo(newInfo);
   };
   if (applicantInfo[label.toLowerCase()] === undefined) {
     applicantInfo[label.toLowerCase()] = "";

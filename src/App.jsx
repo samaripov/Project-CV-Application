@@ -1,14 +1,23 @@
 import { useState } from "react";
+
 import "./App.css";
-import Input from "./components/input/Input.jsx"
+import "react-phone-number-input/style.css";
+
+import PhoneInput from "react-phone-number-input";
+import Input from "./components/input/Input.jsx";
 
 function App() {
   const [applicantInfo, setApplicantInfo] = useState({});
+  const [phoneNumber, setPhoneNumber] = useState();
 
   const handleSubmit = (e) => {
+    const newInfo = {
+      ...applicantInfo,
+      phoneNumber: phoneNumber,
+    }
+    setApplicantInfo(newInfo);
     console.log(e);
   };
-
   return (
     <>
       <h1>General Information</h1>
@@ -29,6 +38,13 @@ function App() {
           type="email"
           applicantInfo={applicantInfo}
           setApplicantInfo={setApplicantInfo}
+        />
+        <PhoneInput
+          defaultCountry=""
+          placeholder="Enter your phone number"
+          name="phoneNumber"
+          value={phoneNumber}
+          onChange={setPhoneNumber}
         />
         <button type="submit">Submit</button>
       </form>
