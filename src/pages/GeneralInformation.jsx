@@ -4,6 +4,7 @@ import { useState } from "react";
 import PhoneInput from "react-phone-number-input";
 import Input from "../components/input/Input.jsx";
 import isThereAMissingField from "../helpers/isThereAMissingField.js";
+import capitalize from "../helpers/capitalize.js";
 
 export default function GeneralInformation({
   applicantInfo,
@@ -14,15 +15,15 @@ export default function GeneralInformation({
   const [phoneNumber, setPhoneNumber] = useState();
 
   const handleSubmit = (e) => {
-    const missingProperty = isThereAMissingField(applicantInfo);
-    if (missingProperty) {
-      alert(`${missingProperty} can't be blank!`);
-      return;
-    }
     const newInfo = {
       ...applicantInfo,
       phoneNumber: phoneNumber,
     };
+    const missingProperty = isThereAMissingField(newInfo);
+    if (missingProperty) {
+      alert(`${capitalize(missingProperty)} can't be blank!`);
+      return;
+    }
     setApplicantInfo(newInfo);
     setPageIndex(pageIndex + 1);
     console.log(newInfo);
