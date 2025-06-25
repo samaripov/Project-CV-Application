@@ -14,7 +14,7 @@ function App() {
   const handleSubmit = (e) => {
     const newInfo = {
       ...applicantInfo,
-      phoneNumber: phoneNumber
+      phoneNumber: phoneNumber,
     };
 
     const missingProperty = isThereAMissingField(newInfo);
@@ -27,23 +27,26 @@ function App() {
   };
 
   return (
-    <form className="container" action={handleSubmit}>
-      <GeneralInformation
-        applicantInfo={applicantInfo}
-        setApplicantInfo={setApplicantInfo}
-        phoneNumber={phoneNumber}
-        setPhoneNumber={setPhoneNumber}
-      />
-      <EducationInformation
-        applicantInfo={applicantInfo}
-        setApplicantInfo={setApplicantInfo}
-      />
-      <ExperienceInformation
-        applicantInfo={applicantInfo}
-        setApplicantInfo={setApplicantInfo}
-      />
-      <button type="submit">Submit Application</button>
-    </form>
+    <>
+      <h1>Tell us about yourself</h1>
+      <form className="container" action={handleSubmit}>
+        <GeneralInformation
+          applicantInfo={applicantInfo}
+          setApplicantInfo={setApplicantInfo}
+          phoneNumber={phoneNumber}
+          setPhoneNumber={setPhoneNumber}
+        />
+        <EducationInformation
+          applicantInfo={applicantInfo}
+          setApplicantInfo={setApplicantInfo}
+        />
+        <ExperienceInformation
+          applicantInfo={applicantInfo}
+          setApplicantInfo={setApplicantInfo}
+        />
+        <button type="submit">Submit Application</button>
+      </form>
+    </>
   );
 }
 

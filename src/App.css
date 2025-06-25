@@ -1,4 +1,4 @@
-h1 {
+h1, h2 {
   margin-block-end: 0;
   color: rgb(40, 158, 255);
 }
@@ -21,6 +21,7 @@ select:focus {
 
 button {
   color: white;
+  font-weight: bolder;
   font-size: x-large;
   padding: 1rem;
   background: rgb(40, 158, 255);
@@ -29,7 +30,7 @@ button {
   transition: background 0.2s ease-in-out;
 }
 button:hover {
-  background: rgb(48, 154, 240);
+  background: rgb(52, 150, 230);
 }
 #root {
   display: flex;

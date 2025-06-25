@@ -8,7 +8,7 @@ export default function ExperienceInformation({
 }) {
   return (
     <>
-      <h1>Experience Information</h1>
+      <h2>Do you have any relevant experience?</h2>
       <Input
         label="companyName"
         placeholder="Company Name"

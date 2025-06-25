@@ -13,7 +13,7 @@ export default function GeneralInformation({
 
   return (
     <>
-      <h1>General Information</h1>
+      <h2>General Information</h2>
         <Input
           label="Firstname"
           applicantInfo={applicantInfo}

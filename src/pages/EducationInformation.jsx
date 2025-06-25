@@ -8,7 +8,7 @@ export default function EducationInformation({
 }) {
   return (
     <>
-      <h1>Tell us about your most recent education.</h1>
+      <h2>What was your most recent education?</h2>
       <Input
         label="schoolName"
         placeholder="School Name"
