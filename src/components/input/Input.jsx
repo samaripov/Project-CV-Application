@@ -5,14 +5,16 @@ export default function Input({
   placeholder = label,
   applicantInfo,
   type = "text",
+  minLength,
   setApplicantInfo,
 }) {
   const handleOnChange = (e) => {
     const newInfo = {
       ...applicantInfo,
       [e.target.name]: e.target.value,
-    }
+    };
     setApplicantInfo(newInfo);
+    console.log(newInfo);
   };
   if (applicantInfo[label.toLowerCase()] === undefined) {
     applicantInfo[label.toLowerCase()] = "";
@@ -24,6 +26,7 @@ export default function Input({
       name={label.toLowerCase()}
       value={applicantInfo[label.toLowerCase()]}
       type={type}
+      minLength={minLength}
       onChange={(e) => handleOnChange(e)}
     ></input>
   );
