@@ -15,3 +15,8 @@
 .vertical-container {
   display: flex;
 }
+
+.vertical-container * {
+  flex: 1;
+}
+

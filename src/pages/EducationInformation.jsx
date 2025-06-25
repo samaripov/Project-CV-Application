@@ -43,20 +43,22 @@ export default function EducationInformation({
         applicantInfo={applicantInfo}
         setApplicantInfo={setApplicantInfo}
       />
-      <Input
-        label="startDate"
+      <div className="vertical-container">
+        <Input
+        label="startDate_Education"
         placeholder="The start date of your education."
         type="date"
         applicantInfo={applicantInfo}
         setApplicantInfo={setApplicantInfo}
       />
       <Input
-        label="endDate"
+        label="endDate_Education"
         placeholder="The end date of your education."
         type="date"
         applicantInfo={applicantInfo}
         setApplicantInfo={setApplicantInfo}
       />
+      </div>
     </>
   );
 }

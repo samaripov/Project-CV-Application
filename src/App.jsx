@@ -5,6 +5,7 @@ import GeneralInformation from "./pages/GeneralInformation";
 import EducationInformation from "./pages/EducationInformation";
 import capitalize from "./helpers/capitalize";
 import isThereAMissingField from "./helpers/isThereAMissingField";
+import ExperienceInformation from "./pages/ExperienceInformation";
 
 function App() {
   const [applicantInfo, setApplicantInfo] = useState({});
@@ -34,6 +35,10 @@ function App() {
         setPhoneNumber={setPhoneNumber}
       />
       <EducationInformation
+        applicantInfo={applicantInfo}
+        setApplicantInfo={setApplicantInfo}
+      />
+      <ExperienceInformation
         applicantInfo={applicantInfo}
         setApplicantInfo={setApplicantInfo}
       />
