@@ -1,55 +1,26 @@
 import { useState } from "react";
 
 import "./App.css";
-import "react-phone-number-input/style.css";
+import GeneralInformation from "./pages/GeneralInformation";
 
-import PhoneInput from "react-phone-number-input";
-import Input from "./components/input/Input.jsx";
+//TODO: Each screen should create it's respective part of the object.
+//Once it creates it, it must also verify it's integrity.
+//Afterwards the app should give a setApplicantInfo and
+//each seaction needs to merge it's part with the main applicantInfo
 
 function App() {
   const [applicantInfo, setApplicantInfo] = useState({});
-  const [phoneNumber, setPhoneNumber] = useState();
+  const [pageIndex, setPageIndex] = useState(0);
 
-  const handleSubmit = (e) => {
-    const newInfo = {
-      ...applicantInfo,
-      phoneNumber: phoneNumber,
-    }
-    setApplicantInfo(newInfo);
-    console.log(e);
-  };
-  return (
-    <>
-      <h1>General Information</h1>
-      <form className="container" action={handleSubmit}>
-        <Input
-          label="Firstname"
-          applicantInfo={applicantInfo}
-          setApplicantInfo={setApplicantInfo}
-        />
-        <Input
-          label="Lastname"
-          applicantInfo={applicantInfo}
-          setApplicantInfo={setApplicantInfo}
-        />
-        <Input
-          label="email"
-          placeholder="email@example.com"
-          type="email"
-          applicantInfo={applicantInfo}
-          setApplicantInfo={setApplicantInfo}
-        />
-        <PhoneInput
-          defaultCountry=""
-          placeholder="Enter your phone number"
-          name="phoneNumber"
-          value={phoneNumber}
-          onChange={setPhoneNumber}
-        />
-        <button type="submit">Submit</button>
-      </form>
-    </>
-  );
+  const pages = [
+    <GeneralInformation
+      applicantInfo={applicantInfo}
+      setApplicantInfo={setApplicantInfo}
+      pageIndex={pageIndex}
+      setPageIndex={setPageIndex}
+    />,
+  ];
+  return <>{pageIndex < pages.length ? pages[pageIndex] : <h1>Out of pages</h1>}</>;
 }
 
 export default App;
