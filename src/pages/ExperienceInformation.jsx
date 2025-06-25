@@ -8,7 +8,7 @@ export default function ExperienceInformation({
 }) {
   return (
     <>
-      <h1>General Information</h1>
+      <h1>Experience Information</h1>
       <Input
         label="companyName"
         placeholder="Company Name"
