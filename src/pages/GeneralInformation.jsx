@@ -35,6 +35,7 @@ export default function GeneralInformation({
           minLength={4}
         />
         <PhoneInput
+          id="phoneNumber"
           defaultCountry=""
           placeholder="Enter your phone number"
           name="phoneNumber"

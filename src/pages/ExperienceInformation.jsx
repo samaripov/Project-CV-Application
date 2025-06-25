@@ -24,6 +24,7 @@ export default function ExperienceInformation({
         minLength={1}
       />
       <textarea
+        id="responsibilities"
         name="responsibilities"
         placeholder="What were your responsibilities?"
         value={
@@ -42,19 +43,19 @@ export default function ExperienceInformation({
       />
       <div className="vertical-container">
         <Input
-        label="startDate_Experience"
-        placeholder="The start date of your experience."
-        type="date"
-        applicantInfo={applicantInfo}
-        setApplicantInfo={setApplicantInfo}
-      />
-      <Input
-        label="endDate_Experience"
-        placeholder="The end date of your experience."
-        type="date"
-        applicantInfo={applicantInfo}
-        setApplicantInfo={setApplicantInfo}
-      />
+          label="startDate_Experience"
+          placeholder="The start date of your experience."
+          type="date"
+          applicantInfo={applicantInfo}
+          setApplicantInfo={setApplicantInfo}
+        />
+        <Input
+          label="endDate_Experience"
+          placeholder="The end date of your experience."
+          type="date"
+          applicantInfo={applicantInfo}
+          setApplicantInfo={setApplicantInfo}
+        />
       </div>
     </>
   );
