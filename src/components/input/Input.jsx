@@ -21,7 +21,7 @@ export default function Input({
 
   return (
     <input
-      id={label}
+      id={label.toLowerCase()}
       placeholder={placeholder}
       name={label.toLowerCase()}
       value={applicantInfo[label.toLowerCase()]}

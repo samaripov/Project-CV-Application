@@ -39,7 +39,7 @@ export default function ExperienceInformation({
           };
           setApplicantInfo(newInfo);
         }}
-        minLength={4}
+        minLength={3}
       />
       <div className="vertical-container">
         <Input

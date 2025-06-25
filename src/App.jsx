@@ -15,10 +15,17 @@ function App() {
     const newInfo = {
       ...applicantInfo,
       phoneNumber: phoneNumber,
+      degree:
+        applicantInfo.degree !== undefined ? applicantInfo.degree : undefined,
+      responsibilities:
+        applicantInfo.responsibilities !== undefined
+          ? applicantInfo.responsibilities
+          : undefined,
     };
 
     const missingProperty = isThereAMissingField(newInfo);
     if (missingProperty) {
+      document.getElementById(missingProperty).focus();
       alert(`${capitalize(missingProperty)} can't be blank!`);
       return;
     }
