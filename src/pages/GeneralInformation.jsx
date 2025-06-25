@@ -7,8 +7,9 @@ import Input from "../components/input/Input.jsx";
 export default function GeneralInformation({
   applicantInfo,
   setApplicantInfo,
+  phoneNumber,
+  setPhoneNumber
 }) {
-  const [phoneNumber, setPhoneNumber] = useState();
 
   return (
     <>
@@ -39,6 +40,7 @@ export default function GeneralInformation({
           name="phoneNumber"
           value={applicantInfo.phoneNumber ? applicantInfo.phoneNumber : phoneNumber}
           onChange={setPhoneNumber}
+          minLength={2}
         />
     </>
   );

@@ -1,17 +1,11 @@
 import "react-phone-number-input/style.css";
-import { useState } from "react";
 
 import Input from "../components/input/Input.jsx";
-import isThereAMissingField from "../helpers/isThereAMissingField.js";
-import capitalize from "../helpers/capitalize.js";
 
 export default function EducationInformation({
   applicantInfo,
   setApplicantInfo,
-  pageIndex,
-  setPageIndex,
 }) {
-  
   return (
     <>
       <h1>Tell us about your most recent education.</h1>
@@ -22,12 +16,32 @@ export default function EducationInformation({
         setApplicantInfo={setApplicantInfo}
         minLength={1}
       />
+      <select
+        name="degree"
+        id="degree"
+        placeholder="Degree Level"
+        value={applicantInfo.degree !== undefined ? applicantInfo.degree : ""}
+        onChange={(e) => {
+          const newInfo = {
+            ...applicantInfo,
+            degree: e.target.value,
+          };
+          setApplicantInfo(newInfo);
+        }}
+      >
+        <option value="">Select</option>
+        <option value="Doctorate">Doctorate</option>
+        <option value="Masters">Masters</option>
+        <option value="Bachelors">Bachelors</option>
+        <option value="Associates">Associates</option>
+        <option value="High School Diploma">High School Diploma</option>
+      </select>
       <Input
-        label="degree"
-        placeholder="Degree (i.e. Bachelors, Associates etc)"
+        label="major"
+        placeholder="Major type"
+        type="text"
         applicantInfo={applicantInfo}
         setApplicantInfo={setApplicantInfo}
-        minLength={1}
       />
       <Input
         label="startDate"

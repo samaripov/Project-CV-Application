@@ -14,7 +14,6 @@ export default function Input({
       [e.target.name]: e.target.value,
     };
     setApplicantInfo(newInfo);
-    console.log(newInfo);
   };
   if (applicantInfo[label.toLowerCase()] === undefined) {
     applicantInfo[label.toLowerCase()] = "";
