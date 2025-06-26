@@ -41,7 +41,7 @@ export default function ExperienceInformation({
         }}
         minLength={3}
       />
-      <div className="vertical-container">
+      <div className="horizontal-container">
         <Input
           label="startDate_Experience"
           placeholder="The start date of your experience."

@@ -1,5 +1,11 @@
-export default function FinalView({applicantInfo}) {
+import { useState } from "react";
+
+export default function FinalView({ applicantInfo }) {
+  const [editId, setEditId] = useState("");
   return (
-    <p>{JSON.stringify(applicantInfo)}</p>
-  )
+    <div className="container">
+      <h1>General Information</h1>
+      <p>{applicantInfo.firstname}</p>
+    </div>
+  );
 }

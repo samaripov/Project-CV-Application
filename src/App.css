@@ -52,11 +52,11 @@ button:hover {
     width: 90%;
   }
 }
-.vertical-container {
+.horizontal-container {
   display: flex;
   gap: 1rem;
 }
 
-.vertical-container * {
+.horizontal-container * {
   flex: 1;
 }

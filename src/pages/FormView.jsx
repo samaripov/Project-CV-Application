@@ -1,6 +1,6 @@
 import EducationInformation from "../components/sections/EducationInformation";
-import ExperienceInformation from "../components/sections/ExperienceInformation";
 import GeneralInformation from "../components/sections/GeneralInformation";
+import ExperienceEducation from "../components/sections/ExperienceInformation";
 
 export default function FormView({
   action,
@@ -11,8 +11,8 @@ export default function FormView({
 }) {
   return (
     <>
-      <h1>Tell us about yourself</h1>
       <form className="container" action={action}>
+        <h1>Tell us about yourself</h1>
         <GeneralInformation
           applicantInfo={applicantInfo}
           setApplicantInfo={setApplicantInfo}
@@ -23,7 +23,7 @@ export default function FormView({
           applicantInfo={applicantInfo}
           setApplicantInfo={setApplicantInfo}
         />
-        <ExperienceInformation
+        <ExperienceEducation
           applicantInfo={applicantInfo}
           setApplicantInfo={setApplicantInfo}
         />
