@@ -23,7 +23,8 @@ export default function FinalView({ applicantInfo, setApplicantInfo }) {
         </form>
       ) : (
         <p onClick={() => setEditFieldName("firstname")}>
-          {applicantInfo.firstname}
+          <span>Name: </span>{applicantInfo.firstname}
+          <hr />
         </p>
       )}
     </div>
