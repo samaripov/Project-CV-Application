@@ -4,20 +4,20 @@ import lowerCaseFirstChar from "../../helpers/lowerCaseFirstChar";
 import EditSVG from "../svgs/editSVG";
 import PhoneInput from "react-phone-number-input";
 
-export default function FinalViewOrEditPhone({
+export default function FinalViewOrSelectDegree({
   applicantInfo,
   setApplicantInfo,
   editFieldName,
   setEditFieldName,
 }) {
-  function handlePhoneUpdates(e) {
-    const newInfo = {
-      ...applicantInfo,
-      phoneNumber: e,
-    };
-    setApplicantInfo(newInfo);
+  function handleOnChange(e) {
+              const newInfo = {
+                ...applicantInfo,
+                degree: e.target.value,
+              };
+              setApplicantInfo(newInfo);
   }
-  const property = "phoneNumber";
+  const property = "degree";
   return (
     <>
       {editFieldName === property.toLowerCase() ? (
@@ -25,13 +25,22 @@ export default function FinalViewOrEditPhone({
           action={() => setEditFieldName("")}
           className="horizontal-container"
         >
-          <PhoneInput
-            placeholder="Enter your phone number"
-            name="phoneNumber"
-            value={applicantInfo.phoneNumber}
-            onChange={handlePhoneUpdates}
-            minLength={2}
-          />
+          <select
+            name="degree"
+            id="degree"
+            placeholder="Degree Level"
+            value={
+              applicantInfo.degree !== undefined ? applicantInfo.degree : ""
+            }
+            onChange={handleOnChange}
+          >
+            <option value="">Select</option>
+            <option value="Doctorate">Doctorate</option>
+            <option value="Masters">Masters</option>
+            <option value="Bachelors">Bachelors</option>
+            <option value="Associates">Associates</option>
+            <option value="High School Diploma">High School Diploma</option>
+          </select>
           <button>Done</button>
         </form>
       ) : (

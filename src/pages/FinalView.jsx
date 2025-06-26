@@ -1,6 +1,7 @@
 import { useState } from "react";
 import FinalViewOrEdit from "../components/finalview_or_edit/FinalViewOrEdit";
 import FinalViewOrEditPhone from "../components/finalview_or_edit/FinalViewOrEditPhone";
+import FinalViewOrSelectDegree from "../components/finalview_or_edit/FinalViewOrSelectDegree";
 
 export default function FinalView({ applicantInfo, setApplicantInfo }) {
   const [editFieldName, setEditFieldName] = useState("");
@@ -8,6 +9,7 @@ export default function FinalView({ applicantInfo, setApplicantInfo }) {
   return (
     <div className="container">
       <h1>Is this correct?</h1>
+      <h2>General Information</h2>
       <FinalViewOrEdit
         property="firstname"
         editFieldName={editFieldName}
@@ -37,6 +39,20 @@ export default function FinalView({ applicantInfo, setApplicantInfo }) {
         setEditFieldName={setEditFieldName}
       />
       
+      <h2>Education</h2>
+      <FinalViewOrEdit
+        property="schoolname"
+        editFieldName={editFieldName}
+        setEditFieldName={setEditFieldName}
+        applicantInfo={applicantInfo}
+        setApplicantInfo={setApplicantInfo}
+      />
+      <FinalViewOrSelectDegree
+        editFieldName={editFieldName}
+        setEditFieldName={setEditFieldName}
+        applicantInfo={applicantInfo}
+        setApplicantInfo={setApplicantInfo}
+      />
     </div>
   );
 }
