@@ -2,10 +2,10 @@ import { useState } from "react";
 import capitalize from "../../helpers/capitalize";
 import Input from "../input/Input";
 import lowerCaseFirstChar from "../../helpers/lowerCaseFirstChar";
-
+import editSVG from "../../../public/edit_button.svg";
 export default function FinalViewOrEdit({
   property,
-  type="text",
+  type = "text",
   applicantInfo,
   setApplicantInfo,
 }) {
@@ -29,11 +29,16 @@ export default function FinalViewOrEdit({
           <button>Update</button>
         </form>
       ) : (
-        <p onClick={() => setEditFieldName(property.toLowerCase())}>
-          <span>{capitalize(property)}: </span>
-          {applicantInfo[lowerCaseFirstChar(property)]}
+        <div>
+          <p onClick={() => setEditFieldName(property.toLowerCase())}>
+            <img src={editSVG} alt="" />
+            <div>
+              <h4>{capitalize(property)}: </h4>
+              {applicantInfo[lowerCaseFirstChar(property)]}
+            </div>
+          </p>
           <hr />
-        </p>
+        </div>
       )}
     </>
   );

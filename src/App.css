@@ -5,7 +5,10 @@ span {
   margin-block-end: 0;
   color: rgb(40, 158, 255);
 }
-
+span {
+  padding-inline-end: 1vw;
+  font-weight: bolder;
+}
 input,
 textarea,
 select {
@@ -35,6 +38,23 @@ button {
 button:hover {
   background: rgb(52, 150, 230);
 }
+
+p {
+  display: flex;
+  align-items: center;
+}
+
+p img {
+  max-height: 3vh;
+  padding-inline-end: 0.5vw;
+}
+
+hr {
+  border: none;
+  background: rgb(52, 150, 230);
+  height: 1px;
+}
+
 #root {
   display: flex;
   flex-direction: column;
