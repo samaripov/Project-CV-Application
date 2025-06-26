@@ -89,6 +89,6 @@ hr {
   gap: 1rem;
 }
 
-.horizontal-container * {
+.horizontal-container > * {
   flex: 1;
 }

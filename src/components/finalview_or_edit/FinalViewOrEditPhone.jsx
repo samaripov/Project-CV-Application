@@ -8,9 +8,8 @@ export default function FinalViewOrEdit({
   type = "text",
   applicantInfo,
   setApplicantInfo,
-  editFieldName,
-  setEditFieldName
 }) {
+  const [phoneNumber, setPhoneNumber] = useState(applicantInfo.phoneNumber);
 
   return (
     <>
@@ -19,15 +18,14 @@ export default function FinalViewOrEdit({
           action={() => setEditFieldName("")}
           className="horizontal-container"
         >
-          <Input
-            label={lowerCaseFirstChar(property)}
-            type={type}
-            placeholder={`Edit ${property.toLowerCase()}`}
-            applicantInfo={applicantInfo}
-            setApplicantInfo={setApplicantInfo}
-            minLength={1}
+          <PhoneInput
+            placeholder="Enter your phone number"
+            name="phoneNumber"
+            value={phoneNumber}
+            onChange={setPhoneNumber}
+            minLength={2}
           />
-          <button>Done</button>
+          <button>Update</button>
         </form>
       ) : (
         <>
