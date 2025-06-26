@@ -5,6 +5,7 @@ import capitalize from "./helpers/capitalize";
 import isThereAMissingField from "./helpers/isThereAMissingField";
 import FormView from "./pages/FormView";
 import FinalView from "./pages/FinalView";
+import SubmittedView from "./pages/SubmittedView";
 
 function App() {
   const [applicantInfo, setApplicantInfo] = useState({
@@ -24,7 +25,7 @@ function App() {
     startdate_experience: "2025-06-20",
   });
   const [phoneNumber, setPhoneNumber] = useState("+399");
-  const [showFinalView, setShowFinalView] = useState(0);
+  const [pageNumber, setPageNumber] = useState(0);
 
   const handleSubmit = (e) => {
     const newInfo = {
@@ -45,28 +46,36 @@ function App() {
       return;
     }
     setApplicantInfo(newInfo);
-    setShowFinalView(1);
+    setPageNumber(1);
     console.log(newInfo);
   };
 
-  return (
-    <>
-      {showFinalView === 0 ? (
-        <FormView
-          action={handleSubmit}
-          applicantInfo={applicantInfo}
-          setApplicantInfo={setApplicantInfo}
-          phoneNumber={phoneNumber}
-          setPhoneNumber={setPhoneNumber}
-        />
-      ) : (
-        <FinalView
-          applicantInfo={applicantInfo}
-          setApplicantInfo={setApplicantInfo}
-        />
-      )}
-    </>
-  );
+  function getPage() {
+    switch (pageNumber) {
+      case 0:
+        return (
+          <FormView
+            action={handleSubmit}
+            applicantInfo={applicantInfo}
+            setApplicantInfo={setApplicantInfo}
+            phoneNumber={phoneNumber}
+            setPhoneNumber={setPhoneNumber}
+          />
+        );
+      case 1:
+        return (
+          <FinalView
+            applicantInfo={applicantInfo}
+            setApplicantInfo={setApplicantInfo}
+            setPageNumber={setPageNumber}
+          />
+        );
+      case 2:
+        return <SubmittedView applicantInfo={applicantInfo} />;
+    }
+  }
+
+  return <>{getPage()}</>;
 }
 
 export default App;

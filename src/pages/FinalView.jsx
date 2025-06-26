@@ -5,7 +5,11 @@ import FinalViewOrSelectDegree from "../components/finalview_or_edit/FinalViewOr
 import FinalViewOrDate from "../components/finalview_or_edit/FinalViewOrDate";
 import FinalViewOrEditResponsibilities from "../components/finalview_or_edit/FinalViewOrEditResponsibilities";
 
-export default function FinalView({ applicantInfo, setApplicantInfo }) {
+export default function FinalView({
+  applicantInfo,
+  setApplicantInfo,
+  setPageNumber,
+}) {
   const [editFieldName, setEditFieldName] = useState("");
 
   return (
@@ -98,6 +102,21 @@ export default function FinalView({ applicantInfo, setApplicantInfo }) {
         applicantInfo={applicantInfo}
         setApplicantInfo={setApplicantInfo}
       />
+      <FinalViewOrDate
+        property="startdate_experience"
+        editFieldName={editFieldName}
+        setEditFieldName={setEditFieldName}
+        applicantInfo={applicantInfo}
+        setApplicantInfo={setApplicantInfo}
+      />
+      <FinalViewOrDate
+        property="enddate_experience"
+        editFieldName={editFieldName}
+        setEditFieldName={setEditFieldName}
+        applicantInfo={applicantInfo}
+        setApplicantInfo={setApplicantInfo}
+      />
+      <button onClick={() => setPageNumber(2)}>Submit Application</button>
     </div>
   );
 }

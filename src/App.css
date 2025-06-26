@@ -1,12 +1,12 @@
 h1,
 h2,
-h4,
-span {
+h4 {
   margin-block-end: 0;
   color: rgb(40, 158, 255);
 }
 h4 {
   margin: 0;
+  padding-inline-end: 1rem;
 }
 span {
   padding-inline-end: 1vw;
@@ -73,6 +73,9 @@ hr {
   fill: rgb(52, 150, 230);
   cursor: pointer;
 }
+.larger-font {
+  font-size: x-large;
+}
 .container {
   width: 50%;
   display: flex;
@@ -87,6 +90,7 @@ hr {
 .horizontal-container {
   display: flex;
   gap: 1rem;
+  width: 100%;
 }
 
 .horizontal-container > * {
