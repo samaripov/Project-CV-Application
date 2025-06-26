@@ -1,11 +1,31 @@
 import { useState } from "react";
+import Input from "../components/input/Input";
 
-export default function FinalView({ applicantInfo }) {
-  const [editId, setEditId] = useState("");
+export default function FinalView({ applicantInfo, setApplicantInfo }) {
+  const [editFieldName, setEditFieldName] = useState("");
+
   return (
     <div className="container">
-      <h1>General Information</h1>
-      <p>{applicantInfo.firstname}</p>
+      <h1>Is this correct?</h1>
+      {editFieldName === "firstname" ? (
+        <form
+          action={() => setEditFieldName("")}
+          className="horizontal-container"
+        >
+          <Input
+            label="Firstname"
+            placeholder="Edit Firstname"
+            applicantInfo={applicantInfo}
+            setApplicantInfo={setApplicantInfo}
+            minLength={1}
+          />
+          <button>Update</button>
+        </form>
+      ) : (
+        <p onClick={() => setEditFieldName("firstname")}>
+          {applicantInfo.firstname}
+        </p>
+      )}
     </div>
   );
 }

@@ -45,7 +45,10 @@ function App() {
           setPhoneNumber={setPhoneNumber}
         />
       ) : (
-        <FinalView applicantInfo={applicantInfo}/>
+        <FinalView
+          applicantInfo={applicantInfo}
+          setApplicantInfo={setApplicantInfo}
+        />
       )}
     </>
   );
