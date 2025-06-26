@@ -53,7 +53,10 @@ p img {
   max-height: 2rem;
   padding-inline-end: 0.5vw;
 }
-
+p img:hover {
+  filter: invert(42%) sepia(90%) saturate(806%) hue-rotate(157deg) brightness(95%) contrast(104%);
+  cursor: pointer;
+}
 hr {
   border: none;
   background: rgb(52, 150, 230);
