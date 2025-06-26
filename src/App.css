@@ -5,6 +5,9 @@ span {
   margin-block-end: 0;
   color: rgb(40, 158, 255);
 }
+h4 {
+  margin: 0;
+}
 span {
   padding-inline-end: 1vw;
   font-weight: bolder;
@@ -40,12 +43,14 @@ button:hover {
 }
 
 p {
+  margin: 0;
+  font-size: larger;
   display: flex;
   align-items: center;
 }
 
 p img {
-  max-height: 3vh;
+  max-height: 2rem;
   padding-inline-end: 0.5vw;
 }
 
