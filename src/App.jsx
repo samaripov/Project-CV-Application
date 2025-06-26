@@ -1,15 +1,15 @@
-import { useState } from "react";
+import { use, useState } from "react";
 
 import "./App.css";
-import GeneralInformation from "./pages/GeneralInformation";
-import EducationInformation from "./pages/EducationInformation";
 import capitalize from "./helpers/capitalize";
 import isThereAMissingField from "./helpers/isThereAMissingField";
-import ExperienceInformation from "./pages/ExperienceInformation";
+import FormView from "./pages/FormView";
+import FinalView from "./pages/FinalView";
 
 function App() {
   const [applicantInfo, setApplicantInfo] = useState({});
   const [phoneNumber, setPhoneNumber] = useState();
+  const [showFinalView, setShowFinalView] = useState(0);
 
   const handleSubmit = (e) => {
     const newInfo = {
@@ -30,29 +30,23 @@ function App() {
       return;
     }
     setApplicantInfo(newInfo);
+    setShowFinalView(1);
     console.log(newInfo);
   };
 
   return (
     <>
-      <h1>Tell us about yourself</h1>
-      <form className="container" action={handleSubmit}>
-        <GeneralInformation
+      {showFinalView === 0 ? (
+        <FormView
+          action={handleSubmit}
           applicantInfo={applicantInfo}
           setApplicantInfo={setApplicantInfo}
           phoneNumber={phoneNumber}
           setPhoneNumber={setPhoneNumber}
         />
-        <EducationInformation
-          applicantInfo={applicantInfo}
-          setApplicantInfo={setApplicantInfo}
-        />
-        <ExperienceInformation
-          applicantInfo={applicantInfo}
-          setApplicantInfo={setApplicantInfo}
-        />
-        <button type="submit">Submit Application</button>
-      </form>
+      ) : (
+        <FinalView applicantInfo={applicantInfo}/>
+      )}
     </>
   );
 }

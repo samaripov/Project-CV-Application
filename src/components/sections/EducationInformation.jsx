@@ -1,6 +1,6 @@
 import "react-phone-number-input/style.css";
 
-import Input from "../components/input/Input.jsx";
+import Input from "../input/Input.jsx";
 
 export default function EducationInformation({
   applicantInfo,
