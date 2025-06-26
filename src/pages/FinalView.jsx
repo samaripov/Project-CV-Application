@@ -24,8 +24,6 @@ export default function FinalView({ applicantInfo, setApplicantInfo }) {
         setApplicantInfo={setApplicantInfo}
       />
       <PhoneInput
-        id="phoneNumber"
-        defaultCountry=""
         placeholder="Enter your phone number"
         name="phoneNumber"
         value={phoneNumber}

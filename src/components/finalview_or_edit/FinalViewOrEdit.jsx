@@ -3,6 +3,7 @@ import capitalize from "../../helpers/capitalize";
 import Input from "../input/Input";
 import lowerCaseFirstChar from "../../helpers/lowerCaseFirstChar";
 import editSVG from "../../../public/edit_button.svg";
+import EditSVG from "../svgs/editSVG";
 export default function FinalViewOrEdit({
   property,
   type = "text",
@@ -29,16 +30,18 @@ export default function FinalViewOrEdit({
           <button>Update</button>
         </form>
       ) : (
-        <div>
-          <p>
-            <img src={editSVG} alt="" onClick={() => setEditFieldName(property.toLowerCase())}/>
+        <>
+          <div className="final-view">
+            <EditSVG
+              onClick={() => setEditFieldName(property.toLowerCase())}
+            />
             <div>
               <h4>{capitalize(property)}: </h4>
               {applicantInfo[lowerCaseFirstChar(property)]}
             </div>
-          </p>
+          </div>
           <hr />
-        </div>
+        </>
       )}
     </>
   );
