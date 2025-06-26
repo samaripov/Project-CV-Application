@@ -3,6 +3,7 @@ import FinalViewOrEdit from "../components/finalview_or_edit/FinalViewOrEdit";
 import FinalViewOrEditPhone from "../components/finalview_or_edit/FinalViewOrEditPhone";
 import FinalViewOrSelectDegree from "../components/finalview_or_edit/FinalViewOrSelectDegree";
 import FinalViewOrDate from "../components/finalview_or_edit/FinalViewOrDate";
+import FinalViewOrEditResponsibilities from "../components/finalview_or_edit/FinalViewOrEditResponsibilities";
 
 export default function FinalView({ applicantInfo, setApplicantInfo }) {
   const [editFieldName, setEditFieldName] = useState("");
@@ -70,6 +71,28 @@ export default function FinalView({ applicantInfo, setApplicantInfo }) {
       />
       <FinalViewOrDate
         property="enddate_education"
+        editFieldName={editFieldName}
+        setEditFieldName={setEditFieldName}
+        applicantInfo={applicantInfo}
+        setApplicantInfo={setApplicantInfo}
+      />
+
+      <h2>Experience</h2>
+      <FinalViewOrEdit
+        property="companyname"
+        editFieldName={editFieldName}
+        setEditFieldName={setEditFieldName}
+        applicantInfo={applicantInfo}
+        setApplicantInfo={setApplicantInfo}
+      />
+      <FinalViewOrEdit
+        property="positiontitle"
+        editFieldName={editFieldName}
+        setEditFieldName={setEditFieldName}
+        applicantInfo={applicantInfo}
+        setApplicantInfo={setApplicantInfo}
+      />
+      <FinalViewOrEditResponsibilities
         editFieldName={editFieldName}
         setEditFieldName={setEditFieldName}
         applicantInfo={applicantInfo}

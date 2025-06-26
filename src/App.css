@@ -92,3 +92,8 @@ hr {
 .horizontal-container > * {
   flex: 1;
 }
+
+.take-full-width {
+  width: 100%;
+  flex: 1;
+}
