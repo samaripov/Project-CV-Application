@@ -1,4 +1,3 @@
-import { useState } from "react";
 import capitalize from "../../helpers/capitalize";
 import lowerCaseFirstChar from "../../helpers/lowerCaseFirstChar";
 import EditSVG from "../svgs/editSVG";

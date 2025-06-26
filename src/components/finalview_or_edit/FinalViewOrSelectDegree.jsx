@@ -1,8 +1,6 @@
-import { useState } from "react";
 import capitalize from "../../helpers/capitalize";
 import lowerCaseFirstChar from "../../helpers/lowerCaseFirstChar";
 import EditSVG from "../svgs/editSVG";
-import PhoneInput from "react-phone-number-input";
 
 export default function FinalViewOrSelectDegree({
   applicantInfo,
@@ -11,11 +9,11 @@ export default function FinalViewOrSelectDegree({
   setEditFieldName,
 }) {
   function handleOnChange(e) {
-              const newInfo = {
-                ...applicantInfo,
-                degree: e.target.value,
-              };
-              setApplicantInfo(newInfo);
+    const newInfo = {
+      ...applicantInfo,
+      degree: e.target.value,
+    };
+    setApplicantInfo(newInfo);
   }
   const property = "degree";
   return (
