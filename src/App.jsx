@@ -8,22 +8,7 @@ import FinalView from "./pages/FinalView";
 import SubmittedView from "./pages/SubmittedView";
 
 function App() {
-  const [applicantInfo, setApplicantInfo] = useState({
-    companyname: "ee3",
-    degree: "Masters",
-    email: "aripov8cm@gmailc.e",
-    enddate_education: "2025-06-09",
-    enddate_experience: "2025-07-02",
-    firstname: "Sirojiddin",
-    lastname: "Aripov",
-    major: "ee",
-    phoneNumber: "+399",
-    positiontitle: "333",
-    responsibilities: "333",
-    schoolname: "4939",
-    startdate_education: "2025-06-12",
-    startdate_experience: "2025-06-20",
-  });
+  const [applicantInfo, setApplicantInfo] = useState({});
   const [phoneNumber, setPhoneNumber] = useState("+399");
   const [pageNumber, setPageNumber] = useState(0);
 
