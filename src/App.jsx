@@ -9,7 +9,7 @@ import SubmittedView from "./pages/SubmittedView";
 
 function App() {
   const [applicantInfo, setApplicantInfo] = useState({});
-  const [phoneNumber, setPhoneNumber] = useState("+399");
+  const [phoneNumber, setPhoneNumber] = useState();
   const [pageNumber, setPageNumber] = useState(0);
 
   const handleSubmit = (e) => {
