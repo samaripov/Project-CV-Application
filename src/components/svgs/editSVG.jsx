@@ -1,6 +1,6 @@
-export default function EditSVG() {
+export default function EditSVG(props) {
   return (
-    <svg version="1.1" viewBox="0 0 494.936 494.936" xml:space="preserve">
+    <svg version="1.1" viewBox="0 0 494.936 494.936" onClick={props.onClick}>
       <g>
         <g>
           <path

@@ -32,9 +32,7 @@ export default function FinalViewOrEdit({
       ) : (
         <>
           <div className="final-view">
-            <EditSVG
-              onClick={() => setEditFieldName(property.toLowerCase())}
-            />
+            <EditSVG onClick={() => setEditFieldName(property.toLowerCase())}/>
             <div>
               <h4>{capitalize(property)}: </h4>
               {applicantInfo[lowerCaseFirstChar(property)]}
