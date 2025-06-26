@@ -1,32 +1,37 @@
 import { useState } from "react";
-import Input from "../components/input/Input";
+import FinalViewOrEdit from "../components/finalview_or_edit/FinalViewOrEdit";
+import PhoneInput from "react-phone-number-input/input";
 
 export default function FinalView({ applicantInfo, setApplicantInfo }) {
-  const [editFieldName, setEditFieldName] = useState("");
-
+  const [phoneNumber, setPhoneNumber] = useState(applicantInfo.phoneNumber);
   return (
     <div className="container">
       <h1>Is this correct?</h1>
-      {editFieldName === "firstname" ? (
-        <form
-          action={() => setEditFieldName("")}
-          className="horizontal-container"
-        >
-          <Input
-            label="Firstname"
-            placeholder="Edit Firstname"
-            applicantInfo={applicantInfo}
-            setApplicantInfo={setApplicantInfo}
-            minLength={1}
-          />
-          <button>Update</button>
-        </form>
-      ) : (
-        <p onClick={() => setEditFieldName("firstname")}>
-          <span>Name: </span>{applicantInfo.firstname}
-          <hr />
-        </p>
-      )}
+      <FinalViewOrEdit
+        property="firstname"
+        applicantInfo={applicantInfo}
+        setApplicantInfo={setApplicantInfo}
+      />
+      <FinalViewOrEdit
+        property="lastname"
+        applicantInfo={applicantInfo}
+        setApplicantInfo={setApplicantInfo}
+      />
+      <FinalViewOrEdit
+        property="email"
+        type="email"
+        applicantInfo={applicantInfo}
+        setApplicantInfo={setApplicantInfo}
+      />
+      <PhoneInput
+        id="phoneNumber"
+        defaultCountry=""
+        placeholder="Enter your phone number"
+        name="phoneNumber"
+        value={phoneNumber}
+        onChange={setPhoneNumber}
+        minLength={2}
+      />
     </div>
   );
 }
