@@ -1,6 +1,6 @@
 import { useState } from "react";
 import FinalViewOrEdit from "../components/finalview_or_edit/FinalViewOrEdit";
-import PhoneInput from "react-phone-number-input";
+import FinalViewOrEditPhone from "../components/finalview_or_edit/FinalViewOrEditPhone";
 
 export default function FinalView({ applicantInfo, setApplicantInfo }) {
   const [editFieldName, setEditFieldName] = useState("");
@@ -29,6 +29,12 @@ export default function FinalView({ applicantInfo, setApplicantInfo }) {
         type="email"
         applicantInfo={applicantInfo}
         setApplicantInfo={setApplicantInfo}
+      />
+      <FinalViewOrEditPhone
+        applicantInfo={applicantInfo}
+        setApplicantInfo={setApplicantInfo}
+        editFieldName={editFieldName}
+        setEditFieldName={setEditFieldName}
       />
       
     </div>

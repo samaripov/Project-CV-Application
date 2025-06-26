@@ -1,16 +1,23 @@
 import { useState } from "react";
 import capitalize from "../../helpers/capitalize";
-import Input from "../input/Input";
 import lowerCaseFirstChar from "../../helpers/lowerCaseFirstChar";
 import EditSVG from "../svgs/editSVG";
-export default function FinalViewOrEdit({
-  property,
-  type = "text",
+import PhoneInput from "react-phone-number-input";
+
+export default function FinalViewOrEditPhone({
   applicantInfo,
   setApplicantInfo,
+  editFieldName,
+  setEditFieldName,
 }) {
-  const [phoneNumber, setPhoneNumber] = useState(applicantInfo.phoneNumber);
-
+  function handlePhoneUpdates(e) {
+    const newInfo = {
+      ...applicantInfo,
+      phoneNumber: e,
+    };
+    setApplicantInfo(newInfo);
+  }
+  const property = "phoneNumber";
   return (
     <>
       {editFieldName === property.toLowerCase() ? (
@@ -21,8 +28,8 @@ export default function FinalViewOrEdit({
           <PhoneInput
             placeholder="Enter your phone number"
             name="phoneNumber"
-            value={phoneNumber}
-            onChange={setPhoneNumber}
+            value={applicantInfo.phoneNumber}
+            onChange={handlePhoneUpdates}
             minLength={2}
           />
           <button>Update</button>
