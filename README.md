@@ -2,4 +2,4 @@
 
 This is a practice toy app which gathers information from an employee for a job application.
 
-Final version can be viewed here: [https://aripov-cv-app.netlify.app/](https://samaripov.github.io/Project-Homepage/)
+Final version can be viewed here: [https://aripov-cv-app.netlify.app/](https://aripov-cv-app.netlify.app/)
